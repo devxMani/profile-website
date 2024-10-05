@@ -1,11 +1,12 @@
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { TooltipProvider } from "@/components/ui/tooltip"; // Ensure this import is correct
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Inter } from "next/font/google"; // Updated import path
 import "./globals.css";
+import { FontSans } from 'path-to-font-sans'; // Ensure you import FontSans from the correct module
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   verification: {
-    google: "",
+    google: "", // Ensure these values are set correctly
     yandex: "",
   },
 };
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode; // Ensure this type is correct
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -65,7 +66,8 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="light">
-          <TooltipProvider delayDuration={0}>
+          {/* Ensure TooltipProvider is correctly imported and typed */}
+          <TooltipProvider delayDuration={0}> 
             {children}
             <Navbar />
           </TooltipProvider>

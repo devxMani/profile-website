@@ -2,26 +2,26 @@ import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export const DATA = {
-  name: "Chirag Aggarwal",
+  name: "Mani",
   initials: "CA",
   url: "https://chirag.is-a.dev/",
-  location: "Delhi NCR, India",
+  location: "Jalandhar,India",
   locationLink: "https://maps.app.goo.gl/Zbzok1mCik445h1C6",
   description:
     "Passionate, Caffienated and Sleep-deprived Software Engineer from India",
   summary:
-    "I am Chirag Aggarwal, a third-year Bachelor of Technology student from India, currently studying Computer Science Engineering. As a Fullstack Developer, I enjoy both frontend and backend development equally. Additionally, I have a passion for content writing and conducting research on various topics, particularly in the fields of Artificial Intelligence and Computer Vision.",
-  avatarUrl: "/me.jpg",
+    "I am Mani, a fourth-year Bachelor of Technology student from India, currently studying Computer Science Engineering. As a Fullstack Developer, I enjoy both frontend and backend development equally. Additionally, I have a passion for open-source projects and contribution particularly in the fields of Web Development and AI.",
+  avatarUrl: "./me.jpg",
   skills: [
     "React",
     "Next.js",
     "Typescript",
     "Node.js",
-    "Python",
-    "Postgres",
+    "Javascript",
+    "GSAP",
     "Docker",
     "Kubernetes",
-    "Java",
+    "Tailwind",
     "C++",
   ],
   navbar: [
@@ -29,33 +29,33 @@ export const DATA = {
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    email: "chiragaggarwal5k@gmail.com",
-    tel: "+91 9667685415",
+    email: "chandramanigupta2003@gmail.com",
+    tel: "+91 9919669660",
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/ChiragAgg5k",
+        url: "https://github.com/devxMani",
         icon: Icons.github,
 
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/chiragagg5k/",
+        url: "https://www.linkedin.com/in/mani-7b5058253/",
         icon: Icons.linkedin,
 
         navbar: true,
       },
       X: {
         name: "X",
-        url: "https://x.com/ChiragAgg5k",
+        url: "https://x.com/devxMani",
         icon: Icons.x,
 
         navbar: true,
       },
       email: {
         name: "Send Email",
-        url: "mailto:chiragaggarwal5k@gmail.com",
+        url: "mailto:chandramanigupta2003@gmail.com",
         icon: Icons.email,
 
         navbar: false,
@@ -91,53 +91,53 @@ export const DATA = {
   ],
   education: [
     {
-      school: "Bennett University",
-      href: "https://bennett.edu.in/",
+      school: "Lovely Professional University",
+      href: "https://www.lpu.in/",
       degree:
-        "Bachelor's of Technology in Computer Science Engineering | 9.71 CGPA",
-      logoUrl: "/bennett.png",
+        "Bachelor's of Technology in Computer Science Engineering",
+      logoUrl: "/lpu.png",
       start: "2022",
-      end: "2026",
+      end: "2025",
     },
     {
-      school: "Bharti Public School",
-      href: "https://www.bps.edu.in/",
-      degree: "Senior Secondary (CBSE) | X - 91.2% | XII - 89.5%",
-      logoUrl: "/bharti.jpg",
-      start: "2010",
-      end: "2022",
+      school: "Kendriya Vidyalaya",
+      href: "https://no1shahjahanpur.kvs.ac.in/",
+      degree: "Senior Secondary (CBSE)",
+      logoUrl: "/kv.jpg",
+      start: "2009",
+      end: "2019",
     },
   ],
   projects: [
     {
-      title: "Suraksha AI",
+      title: "Blogger Blog",
       href: "https://github.com/ChiragAgg5k/suraksha-ai",
       dates: "Feb 2024 - May 2024",
       active: true,
       description:
-        "An AI powered home security system providing accurate anomaly and threat detection along with real-time alerts and notifications.",
-      technologies: ["Python", "Flask", "Firebase", "Chart.js", "YOLOv8"],
+        "A Blogging website built using Next.js and Firebase.",
+      technologies: ["React", "Javascript", "Tailwind", "Next", "Firebase"],
       links: [
         {
           type: "Source",
-          href: "https://github.com/ChiragAgg5k/suraksha-ai",
+          href: "https://github.com/devxMani/BLOG",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/suraksha-ai.png",
+      image: "/Blog.png",
     },
     {
-      title: "Asclepius",
-      href: "https://github.com/ChiragAgg5k/asclepius",
-      dates: "Dec 2022 - Jan 2023",
+      title: "GSAP projects",
+      href: "https://github.com/devxMani/GSAP-Live",
+      dates: "July 2024 - Aug 2024",
       active: true,
       description:
-        "A desktop application developed in Python and Custom Tkinter to view and request medicines from the Wellness center, check medicine availability, and order medicines directly.",
-      technologies: ["Python", "Tkinter", "SQLite"],
+        "There are 5 projects that i have created for mastering my GSAP tailwind animation skills and Framer motion.",
+      technologies: ["Javascript", "GSAP", "Tailwind", "Framer Motion"],
       links: [
         {
           type: "Source",
-          href: "https://github.com/ChiragAgg5k/asclepius",
+          href: "https://github.com/devxMani/GSAP-Live",
           icon: <Icons.github className="size-3" />,
         },
       ],

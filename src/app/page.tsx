@@ -1,3 +1,4 @@
+import React from 'react';
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -6,7 +7,6 @@ import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
-import Link from "next/link";
 import Markdown from "react-markdown";
 
 const BLUR_FADE_DELAY = 0.04;
@@ -14,6 +14,7 @@ const BLUR_FADE_DELAY = 0.04;
 export default function Page() {
   return (
     <main className="flex items-center justify-center flex-col min-h-[100dvh] space-y-10">
+      {/* Hero section */}
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
@@ -31,7 +32,7 @@ export default function Page() {
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
+              <Avatar className="w-28 h-28 border" as="span">  // Added 'as' prop to specify the underlying element
                 <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
@@ -39,6 +40,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* About section */}
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">About</h2>
@@ -49,6 +52,8 @@ export default function Page() {
           </Markdown>
         </BlurFade>
       </section>
+
+      {/* Work Experience section */}
       <section id="work">
         <div className="flex min-h-0 max-w-2xl flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -60,7 +65,6 @@ export default function Page() {
               delay={BLUR_FADE_DELAY * 6 + id * 0.05}
             >
               <ResumeCard
-                key={work.company}
                 logoUrl={work.logoUrl}
                 altText={work.company}
                 title={work.company}
@@ -74,6 +78,8 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      {/* Education section */}
       <section id="education">
         <div className="flex min-h-0 min-w-[60vw] w-full flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
@@ -85,7 +91,6 @@ export default function Page() {
               delay={BLUR_FADE_DELAY * 8 + id * 0.05}
             >
               <ResumeCard
-                key={education.school}
                 href={education.href}
                 logoUrl={education.logoUrl}
                 altText={education.school}
@@ -97,6 +102,8 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      {/* Skills section */}
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
@@ -105,12 +112,14 @@ export default function Page() {
           <div className="flex flex-wrap gap-1">
             {DATA.skills.map((skill, id) => (
               <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
+                <Badge>{skill}</Badge>
               </BlurFade>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Projects section */}
       <section id="projects">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -134,7 +143,6 @@ export default function Page() {
               >
                 <ProjectCard
                   href={project.href}
-                  key={project.title}
                   title={project.title}
                   description={project.description}
                   dates={project.dates}
@@ -147,6 +155,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* Positions of Responsibility section */}
       <section id="positions">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 13}>
@@ -156,12 +166,6 @@ export default function Page() {
                   Positions of Responsibility 💼
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  {/* During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals. */}
                   I believe in the power of collaboration and teamwork. So I
                   like to keep myself busy while working in different
                   communities and projects. Here are some of the positions I
@@ -191,6 +195,8 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
+
+      {/* Contact section */}
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
@@ -200,23 +206,23 @@ export default function Page() {
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Want to talk about something? Just shoot me a dm{" "}
-                <Link
+                <a
                   href={DATA.contact.social.X.url}
                   className="text-blue-500 hover:underline"
                 >
                   on Twitter
-                </Link>{" "}
+                </a>{" "}
                 or any other social media below.
               </p>
 
               <p className="mx-auto max-w-[600px] text-muted-foreground text-xs pt-8">
                 Thanks to Magicui for providing this{" "}
-                <Link
+                <a
                   href="https://magicui.design/docs/templates/portfolio"
                   className="text-blue-500 hover:underline"
                 >
                   Template
-                </Link>
+                </a>
                 .
               </p>
             </div>
